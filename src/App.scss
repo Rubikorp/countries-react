@@ -1,1 +1,43 @@
 @import './normalize.scss';
+@import './_variable.scss';
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:wght@300;600;800&display=swap');
+
+* {
+	box-sizing: border-box;
+}
+
+:root {
+	--family: #{$fontFamily};
+	--fs-sm: #{$fsSm};
+	--fs-md: #{$fsMd};
+	--fw-lgt: #{$fwLgt};
+	--fw-nrl: #{$fwNrl};
+	--fw-bold: #{$fwBold};
+	--radius: #{$borderRadius};
+}
+
+body {
+	margin: 0;
+}
+
+body[data-theme='dark'] {
+	--color-txt: #{$colorDMTxt};
+	--color-bg: #{$colorDMBg};
+	--color-ui-base: #{$colorDMEl};
+
+	--shadow: #{$shadowDM};
+}
+body[data-theme='light'] {
+	--color-txt: #{$colorLMTxt};
+	--color-bg: #{$colorLMBg};
+	--color-ui-base: #{$colorLMEl};
+
+	--shadow: #{$shadowLM};
+}
+
+body {
+	font-family: $fontFamily;
+	color: var(--color-txt);
+	font-weight: $fwLgt;
+	background-color: var(--color-bg);
+}

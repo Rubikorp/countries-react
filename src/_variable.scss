@@ -1,0 +1,48 @@
+$mobileWidthWindow: 375px;
+$desktopWidthWindow: 1440px;
+
+/* ----------------------------------------------------------------
+						Colors
+DM - Dark Mode
+LM - Light Mode
+El - element
+Bg - background
+Inp - input
+Txt - text
+*/
+
+$colorDMEl: hsl(209, 23%, 22%);
+$colorDMBg: hsl(207, 26%, 17%);
+$colorDMTxt: hsl(0, 0%, 100%);
+$colorDMInp: hsl(0, 0%, 100%);
+$colorLMTxt: hsl(200, 15%, 8%);
+$colorLMInp: hsl(200, 15%, 8%);
+$colorLMBg: hsl(0, 0%, 98%);
+$colorLMEl: hsl(0, 0%, 100%);
+
+/* -------------------------------- 
+						Typography
+Sm - small
+Md - medium
+Lgt - light
+Nrl - normal
+fw - font weight
+fs - font size
+*/
+$fontFamily: 'Nuhito Sans', sans-serif;
+$fsSm: 14px;
+$fsMd: 16px;
+$fwLgt: 300;
+$fwNrl: 600;
+$fwBold: 800;
+
+/* -------------------------------- 
+            Other
+*/
+$borderRadius: 0.5rem;
+
+/* --------------------------------
+						Shadows
+*/
+$shadowLM: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+$shadowDM: rgba(245, 245, 245, 0.2) 0px 0px 8px;
