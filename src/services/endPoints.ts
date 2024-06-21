@@ -1,4 +1,4 @@
-import axios, { AxiosPromise } from 'axios'
+import axios, { AxiosResponse } from 'axios'
 import { ICountry } from '../types/data'
 import { ALL_COUNTRIES, searchByCountry, filterByCode } from './config'
 
@@ -8,7 +8,9 @@ import { ALL_COUNTRIES, searchByCountry, filterByCode } from './config'
  * @returns {Promise<ICountry[]>} - A promise that resolves to an array of all countries.
  */
 export function getCountries(): Promise<ICountry[]> {
-	const data = axios.get(ALL_COUNTRIES).then(response => response.data)
+	const data = axios
+		.get(ALL_COUNTRIES)
+		.then((response: AxiosResponse<ICountry[]>) => response.data)
 	return data
 }
 
@@ -18,8 +20,10 @@ export function getCountries(): Promise<ICountry[]> {
  * @param {string} code - The ISO 3166-1 alpha-2 or alpha-3 code of the country.
  * @returns {Promise<ICountry[]>} - A promise that resolves to an array of matching countries.
  */
-export function getCountry(code: string): Promise<ICountry[]> {
-	const data = axios.get(searchByCountry(code)).then(response => response.data)
+export function getCountry(code: string): Promise<ICountry> {
+	const data = axios
+		.get(searchByCountry(code))
+		.then((response: AxiosResponse<ICountry>) => response.data)
 	return data
 }
 
@@ -27,9 +31,11 @@ export function getCountry(code: string): Promise<ICountry[]> {
  * Fetches countries by their ISO 3166-1 alpha-2 or alpha-3 codes.
  *
  * @param {string[]} code - An array of ISO 3166-1 alpha-2 or alpha-3 codes of the countries to fetch.
- * @returns {AxiosPromise<ICountry[]>} - A promise that resolves to an array of matching countries.
+ * @returns {Promise<ICountry[]>} - A promise that resolves to an array of matching countries.
  */
-export function getCountriesByCode(code: string[]): AxiosPromise<ICountry[]> {
-	const data = axios.get(filterByCode(code)).then(response => response.data)
+export function getCountriesByCode(code: string[]): Promise<ICountry[]> {
+	const data = axios
+		.get(filterByCode(code))
+		.then((response: AxiosResponse<ICountry[]>) => response.data)
 	return data
 }
