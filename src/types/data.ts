@@ -1,4 +1,4 @@
-import {ReactNode} from 'react'
+import { ReactNode } from 'react'
 
 export interface ISearch {
 	search: string | undefined
@@ -11,5 +11,25 @@ export interface IOption {
 }
 
 export interface IChildren {
-	children: ReactNode
+	children: ReactNode[]
+}
+
+export interface ICardProps {
+	img: string
+	name: string
+	info: { title: string; description: string }[]
+}
+
+export interface IConfigReturn {
+	ALL_COUNTRIES: string
+	searchByCountry: (name: string) => string
+	filterByCode: (code: string[]) => string
+}
+
+export interface ICountry {
+	name: { common: string }
+	capital: string
+	flags: { png: string; svg: string; alt: string }
+	population: number
+	region: string
 }
