@@ -11,12 +11,13 @@ export interface IOption {
 }
 
 export interface IChildren {
-	children: ReactNode[]
+	children: ReactNode | ReactNode[]
 }
 
 export interface ICardProps {
 	img: string
 	name: string
+	onClick?: () => void
 	info: { title: string; description: string }[]
 }
 

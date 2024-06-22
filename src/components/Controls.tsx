@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { SearchComponent } from './SearchComponent'
 import { CustomSelect } from './styled/customSelectComponent'
 import { Wrapper } from './styled/controls'
@@ -12,9 +12,19 @@ const options: IOption[] = [
 	{ value: 'Oceania', label: 'Oceania' },
 ]
 
-export const Controls: React.FC = () => {
+interface IProps {
+	onSearch: (search: string | null, region: string | null) => void
+}
+
+export const Controls: React.FC<IProps> = ({ onSearch }) => {
 	const [search, setSearch] = useState('')
 	const [region, setRegion] = useState<IOption | unknown>(null)
+
+	useEffect(() => {
+		const regionValue = (region as IOption)?.value || null
+		onSearch(search, regionValue)
+		//eslint-disable-next-line
+	}, [search, region])
 
 	return (
 		<Wrapper>
