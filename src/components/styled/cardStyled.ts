@@ -11,7 +11,8 @@ export const CardImg = styled.img`
 	display: block;
 	width: 100%;
 	height: 150px;
-	object-fit: cover;
+	aspect-ratio: 16/9
+	
 	object-position: center;
 `
 export const CardBody = styled.div`

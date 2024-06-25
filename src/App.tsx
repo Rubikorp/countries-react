@@ -10,6 +10,7 @@ import { ICountry } from './types/data'
 
 function App() {
 	const [countries, setCountries] = useState<ICountry[]>([])
+	const [isLoaded, setIsLoaded] = useState<boolean>(true)
 
 	return (
 		<>
@@ -19,10 +20,15 @@ function App() {
 					<Route
 						path='/'
 						element={
-							<HomePage countries={countries} setCountries={setCountries} />
+							<HomePage
+								countries={countries}
+								setCountries={setCountries}
+								isLoaded={isLoaded}
+								setIsLoaded={setIsLoaded}
+							/>
 						}
 					/>
-					<Route path='/country/:country' element={<Details />} />
+					<Route path='/country/:name' element={<Details />} />
 					<Route path='/*' element={<NotFound />} />
 				</Routes>
 			</Main>

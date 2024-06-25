@@ -6,4 +6,4 @@ export const ALL_COUNTRIES =
 export const searchByCountry = (name: string) => BASE_URL + 'name/' + name
 
 export const filterByCode = (code: string[]) =>
-	BASE_URL + 'alpha?codes' + code.join(',')
+	BASE_URL + 'alpha?codes=' + code.join(',')

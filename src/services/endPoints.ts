@@ -1,5 +1,5 @@
 import axios, { AxiosResponse } from 'axios'
-import { ICountry } from '../types/data'
+import { ICountry, IPropsInfo } from '../types/data'
 import { ALL_COUNTRIES, searchByCountry, filterByCode } from './config'
 
 /**
@@ -17,13 +17,13 @@ export function getCountries(): Promise<ICountry[]> {
 /**
  * Fetches a country by its code.
  *
- * @param {string} code - The ISO 3166-1 alpha-2 or alpha-3 code of the country.
+ * @param {string} name
  * @returns {Promise<ICountry[]>} - A promise that resolves to an array of matching countries.
  */
-export function getCountry(code: string): Promise<ICountry> {
+export function getCountry(name: string): Promise<IPropsInfo[]> {
 	const data = axios
-		.get(searchByCountry(code))
-		.then((response: AxiosResponse<ICountry>) => response.data)
+		.get(searchByCountry(name))
+		.then((response: AxiosResponse<IPropsInfo[]>) => response.data)
 	return data
 }
 

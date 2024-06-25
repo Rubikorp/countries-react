@@ -28,9 +28,18 @@ export interface IConfigReturn {
 }
 
 export interface ICountry {
-	name: { common: string }
+	name: { common: string; nativeName?: object }
 	capital: string
-	flags: { png: string; svg: string; alt: string }
+	flags: { png: string; svg: string; alt?: string }
 	population: number
 	region: string
+}
+
+export interface IPropsInfo extends ICountry {
+	subregion: string
+	tld: string[]
+	currencies: object
+	languages: string[]
+	borders?: string[]
+	handleParamChange: (value: string) => void
 }
