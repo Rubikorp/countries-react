@@ -23,13 +23,13 @@ const HomePage: React.FC<IHomePageProps> = ({
 		useState<ICountry[]>(countries)
 
 	useEffect(() => {
-		console.log(isLoaded)
 		!countries.length &&
 			getCountries().then(countries => {
 				setCountries(countries)
 				setFilteredCountries(countries)
 				setIsLoaded(false)
 			})
+		//eslint-disable-next-line
 	}, [])
 
 	const handleSearch = (search: string | null, region: string | null): void => {

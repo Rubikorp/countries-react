@@ -23,7 +23,6 @@ const Details: React.FC = () => {
 	useEffect(() => {
 		getCountry(borderCountry as string).then((data: IPropsInfo[]) => {
 			setCountry(data[0] as IPropsInfo)
-			console.log(data[0])
 		})
 	}, [borderCountry])
 

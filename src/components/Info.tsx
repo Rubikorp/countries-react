@@ -1,18 +1,18 @@
-import {
-	Wrapper,
-	InfoImage,
-	InfoTitle,
-	ListGroup,
-	List,
-	ListItem,
-	Meta,
-	TagGroup,
-	Tag,
-} from './styled/infoStyled'
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
+import { getCountriesByCode } from '../services/endPoints'
 import { IPropsInfo } from '../types/data'
 import { convertObjectToArray } from '../utils/utils'
-import { getCountriesByCode } from '../services/endPoints'
+import {
+	InfoImage,
+	InfoTitle,
+	List,
+	ListGroup,
+	ListItem,
+	Meta,
+	Tag,
+	TagGroup,
+	Wrapper,
+} from './styled/infoStyled'
 
 interface ICurrenciesArray {
 	name: string
