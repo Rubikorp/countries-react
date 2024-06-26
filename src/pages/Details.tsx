@@ -28,7 +28,7 @@ const Details: React.FC = () => {
 
 	return (
 		<div>
-			<Button onClick={() => navigate('/', { replace: true })}>
+			<Button onClick={() => navigate('/countries-react', { replace: true })}>
 				<IoArrowBack /> Go back
 			</Button>
 			{country && <Info {...country} handleParamChange={handleParamChange} />}
