@@ -29,7 +29,7 @@ const Details: React.FC = () => {
 	return (
 		<div>
 			<Button onClick={() => navigate('/countries-react', { replace: true })}>
-				<IoArrowBack /> Go back
+				<IoArrowBack /> Back
 			</Button>
 			{country && <Info {...country} handleParamChange={handleParamChange} />}
 		</div>
