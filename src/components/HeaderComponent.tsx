@@ -22,7 +22,7 @@ export const HeaderComponent: React.FC = () => {
 		<HeaderEl>
 			<Container>
 				<Wrapper>
-					<Title to='/'>Where is the world?</Title>
+					<Title to='/countries-react'>Where is the world?</Title>
 					<ModeSwitcher onClick={togleDarkMode}>
 						{isDarkMode ? (
 							<IoMoonOutline size='14px' />

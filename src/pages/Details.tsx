@@ -11,24 +11,24 @@ const Details: React.FC = () => {
 
 	const navigate = useNavigate()
 
-	const [borderCountry, setBorderCountry] = useState<string>(name as string)
-
 	const [country, setCountry] = useState<IPropsInfo>()
 
 	const handleParamChange = (newValue: string): void => {
 		navigate(`/country/${newValue}`)
-		setBorderCountry(newValue)
 	}
 
 	useEffect(() => {
-		getCountry(borderCountry as string).then((data: IPropsInfo[]) => {
-			setCountry(data[0] as IPropsInfo)
-		})
-	}, [borderCountry])
+		// Проверка на наличие name перед запросом данных
+		if (name) {
+			getCountry(name).then((data: IPropsInfo[]) => {
+				setCountry(data[0] as IPropsInfo)
+			})
+		}
+	}, [name])
 
 	return (
 		<div>
-			<Button onClick={() => navigate('/countries-react', { replace: true })}>
+			<Button onClick={() => navigate(-1)}>
 				<IoArrowBack /> Back
 			</Button>
 			{country && <Info {...country} handleParamChange={handleParamChange} />}
