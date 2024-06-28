@@ -88,7 +88,7 @@ Error generating stack: `+i.message+`
 	cursor: pointer;
 	font-size: var(--fs-sm);
 	text-transform: capitalize;
-`,yS=()=>{const[e,t]=x.useState(!1);x.useEffect(()=>{document.body.setAttribute("data-theme",e?"dark":"light")},[e]);const n=()=>{t(!e),console.log(e)};return R.jsx(hS,{children:R.jsx(dv,{children:R.jsxs(mS,{children:[R.jsx(vS,{to:"/",children:"Where is the world?"}),R.jsxs(gS,{onClick:n,children:[e?R.jsx(uw,{size:"14px"}):R.jsx(cw,{size:"14px"}),R.jsxs("span",{style:{marginLeft:"0.75rem"},children:[e?"Light":"Dark"," mode"]})]})]})})})},wS=Q.main`
+`,yS=()=>{const[e,t]=x.useState(!1);x.useEffect(()=>{document.body.setAttribute("data-theme",e?"dark":"light")},[e]);const n=()=>{t(!e),console.log(e)};return R.jsx(hS,{children:R.jsx(dv,{children:R.jsxs(mS,{children:[R.jsx(vS,{to:"/countries-react",children:"Where is the world?"}),R.jsxs(gS,{onClick:n,children:[e?R.jsx(uw,{size:"14px"}):R.jsx(cw,{size:"14px"}),R.jsxs("span",{style:{marginLeft:"0.75rem"},children:[e?"Light":"Dark"," mode"]})]})]})})})},wS=Q.main`
 	padding: 2rem 0;
 	@media (min-width: 768px) {
 		padding: 4rem 0;
