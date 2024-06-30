@@ -39,7 +39,7 @@ const HomePage: React.FC<IHomePageProps> = ({
 		}
 		if (search) {
 			data = data.filter(country =>
-				country.name.common.toLowerCase().includes(search)
+				country.name.common.toLowerCase().includes(search.toLowerCase())
 			)
 		}
 
